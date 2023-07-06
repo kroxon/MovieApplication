@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="clickHandler"
+            type="com.movieapplication.MainActivity.MainActivityClickHandlers" />
+    </data>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="15dp"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            tools:context="com.mastercoding.movieproapp.MainActivity"
+            tools:showIn="@layout/activity_main">
+
+            <!--            <LinearLayout-->
+            <!--                android:orientation="horizontal"-->
+            <!--                android:id="@+id/linearLayout"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="50dp"-->
+            <!--                android:gravity="center"-->
+            <!--                app:layout_constraintTop_toTopOf="parent">-->
+
+            <!--                <Button-->
+            <!--                    android:layout_width="wrap_content"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:onClick="@{clickHandler::onMovieclicked}"-->
+            <!--                    android:text="Top rated movies"/>-->
+
+            <!--                <Space-->
+            <!--                    android:layout_width="10dp"-->
+            <!--                    android:layout_height="2dp"/>-->
+
+            <!--                <Button-->
+            <!--                    android:layout_width="wrap_content"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:onClick="@{clickHandler::onSerieslicked}"-->
+            <!--                    android:text="Top rated tv series"/>-->
+
+            <!--            </LinearLayout>-->
+
+            <RadioGroup
+                android:id="@+id/toggle"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_margin="10dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:background="@drawable/pink_out_line"
+                android:checkedButton="@+id/offer"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <RadioButton
+                    android:id="@+id/search"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="1dp"
+                    android:layout_marginTop="1dp"
+                    android:layout_marginBottom="1dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/widget_background"
+                    android:button="@null"
+                    android:checked="true"
+                    android:gravity="center"
+                    android:onClick="@{clickHandler::onMovieclicked}"
+                    android:text="Top rated movies"
+                    android:textColor="@color/white" />
+
+                <RadioButton
+                    android:id="@+id/offer"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="1dp"
+                    android:layout_marginRight="1dp"
+                    android:layout_marginBottom="1dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/widget_background"
+                    android:button="@null"
+                    android:checked="false"
+                    android:gravity="center"
+                    android:onClick="@{clickHandler::onSerieslicked}"
+                    android:text="Top rated tv series"
+                    android:textColor="@color/white" />
+            </RadioGroup>
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvMoviesTvseries"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:clipToPadding="false"
+                android:scrollbars="vertical"
+                app:layout_constraintTop_toBottomOf="@+id/toggle" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</layout>
+
