@@ -30,11 +30,7 @@ public class TvSerieRepository {
     public MutableLiveData<List<Tvserie>> getMutableLiveData(String listType) {
         TvSeriesDataService tvSeriesDataService = RetrofitInstance.getServiceTvSerie();
 
-        Call<Result> call = null;
-        if (listType.equals("popular"))
-            call = tvSeriesDataService.getPopularTvSeries(application.getApplicationContext().getString(R.string.api_key));
-        if (listType.equals("top_rated"))
-            call = tvSeriesDataService.getTopRatedTvSeries(application.getApplicationContext().getString(R.string.api_key));
+        Call<Result> call = tvSeriesDataService.getTopRatedTvSeries(application.getApplicationContext().getString(R.string.api_key));
 
         call.enqueue(new Callback<Result>() {
             @Override

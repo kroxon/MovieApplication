@@ -23,7 +23,6 @@ class TvSerieActivity : AppCompatActivity() {
         if (i != null) {
             tvSeries = i.getParcelableExtra<Tvserie>("tvserie")
             binding?.tvserie = tvSeries
-//            supportActionBar?.title = tvSeries?.title
         }
 
 
