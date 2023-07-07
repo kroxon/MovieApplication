@@ -5,7 +5,7 @@ The app displays lists of the top-rated movies and series, as well as their desc
 ## Used
 Kotlin, Java, Retrofit, Data Binding
 
-Data from [https://api.printful.com/countries](https://developer.themoviedb.org/)
+Data from https://developer.themoviedb.org/
 
 
 
