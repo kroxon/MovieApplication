@@ -3,7 +3,7 @@
 The app displays lists of the top-rated movies and series, as well as their description. Data from The Movie Database (TMDB) API was used for this purpose. 
 
 ## Used
-Java, Kotlin, Retrofit, Data Binding
+Kotlin, Java, Retrofit, Data Binding
 
 Data from [https://api.printful.com/countries](https://developer.themoviedb.org/)
 
